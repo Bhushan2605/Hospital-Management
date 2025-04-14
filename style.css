@@ -10,6 +10,8 @@ body {
   color: #1a237e;
   overflow-x: hidden;
 }
+
+/* Top Bar */
 .top-bar {
   background-color: #3b5fc3;
   color: #fff;
@@ -23,50 +25,11 @@ body {
   left: 0;
   z-index: 1000;
 }
-/* Modal Background */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
-  justify-content: center;
-  align-items: center;
-}
 
-/* Modal Box */
-.modal-content {
-  background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  text-align: center;
-}
-
-/* Close Button */
-.close {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #888;
-}
-.close:hover {
-  color: #000;
-}
-
-
-
-/* Wrap hamburger + social-icons together in left */
 .top-bar-left {
   display: flex;
   align-items: center;
-  gap: 25px; /* spacing between hamburger and icons */
+  gap: 25px;
 }
 
 #toggle-sidebar-btn {
@@ -102,6 +65,7 @@ body {
   height: 28px;
   margin-top: -4px;
 }
+
 /* Sidebar */
 #sidebar {
   position: fixed;
@@ -109,7 +73,7 @@ body {
   left: -250px;
   width: 250px;
   height: 100%;
-  background-color:  #3b5fc3;
+  background-color: #3b5fc3;
   color: #fff;
   transition: left 0.3s ease;
   padding-top: 60px;
@@ -136,24 +100,60 @@ body {
   background-color: #3b5fc3;
 }
 
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
 
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+.close:hover {
+  color: #000;
+}
 
 /* Hero Section */
 .hero {
-  background:linear-gradient(to right,#f5ebf0, #61a4e2);
+  background: linear-gradient(to right, #f5ebf0, #61a4e2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 80px 60px;
+  flex-wrap: wrap;
   position: relative;
-  flex-wrap: wrap; /* Ensure it wraps on smaller screens */
 }
+
 .hero-left {
   max-width: 50%;
   flex: 1 1 45%;
- 
-  
-  
   position: relative;
   margin-top: -350px;
 }
@@ -163,14 +163,17 @@ body {
   line-height: 1.2;
   margin-bottom: 30px;
 }
+
 .hero-left span {
   color: #1a237e;
   font-weight: bold;
 }
+
 .hero-left p {
   font-size: 16px;
   margin-bottom: 50px;
 }
+
 .btn {
   background-color: #3b5fc3;
   color: #fff;
@@ -184,10 +187,8 @@ body {
   background-color: #2e4aad;
 }
 
-/* Doctor Image */
 .hero-right {
   max-width: 50%;
-
   flex: 1 1 45%;
   display: flex;
   justify-content: center;
@@ -201,23 +202,20 @@ body {
   height: auto;
   border-radius: 10px;
   transform: translateX(10%);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-
-/* Contact Info - Positioned Above the Doctor Image */
 .contact-info {
   position: absolute;
-  top: 70px; /* Adjust this value to move it higher or lower */
+  top: 70px;
   left: 50%;
-  transform: translateX(65%); /* Centers it horizontally above the doctor image */
+  transform: translateX(65%);
   display: flex;
   align-items: center;
   gap: 40px;
   z-index: 2;
 }
 
-/* Contact Item Styles */
 .contact-item {
   font-size: 14px;
   color: #1a237e;
@@ -229,68 +227,7 @@ body {
   margin-right: 5px;
 }
 
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 60px 30px;
-  }
-  
-  .hero-left h1 {
-    font-size: 36px;
-  }
-  
-  .hero-left p {
-    font-size: 14px;
-  }
-
-  .hero-right .hero-image {
-    max-width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 50px 20px;
-  }
-
-  .hero-left,
-  .hero-right {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .hero-left h1 {
-    font-size: 32px;
-  }
-
-  .hero-left p {
-    font-size: 14px;
-  }
-
-  .hero-right .hero-image {
-    max-width: 70%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-left h1 {
-    font-size: 28px;
-  }
-
-  .hero-left p {
-    font-size: 12px;
-  }
-
-  .hero-right .hero-image {
-    max-width: 90%;
-  }
- 
-  
-  
-  
-}/* Departments Section */
+/* Departments Section */
 .departments {
   background: #f5ebf0;
   padding: 80px 40px;
@@ -336,7 +273,6 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-
 /* Doctors Section */
 .doctors {
   background: #f5ebf0;
@@ -346,7 +282,7 @@ body {
 
 .doctors h2 {
   font-size: 36px;
-  color:#1a237e;
+  color: #1a237e;
   margin-bottom: 40px;
 }
 
@@ -395,45 +331,14 @@ body {
   transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
+
 .outer-area {
-  background-color: #f5ebf0;  /* Jo bhi color chahiye yahan do */
-}
-/* Doctor Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 80px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
+  background-color: #f5ebf0;
 }
 
-.modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 30px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
-}
-
-.modal .close {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #555;
-}
-
+/* Health Reminder */
 .health-reminder {
-  background: linear-gradient(90deg,  #1d63a1 0%, #bfc1ce );
+  background: linear-gradient(90deg, #1d63a1 0%, #bfc1ce);
   border-radius: 10px;
   padding: 40px;
   margin: 40px auto;
@@ -442,8 +347,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-
 
 .reminder-container {
   display: flex;
@@ -483,25 +386,13 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-@media(max-width: 768px) {
-  .reminder-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .reminder-image img {
-    margin-top: 20px;
-  }
-}
+/* Subscribe Footer */
 .subscribe-footer {
   background: #f5ebf0;
   position: relative;
   margin-top: -40px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
   overflow: hidden;
 }
-
-
 
 .subscribe-footer::after {
   content: 'HEALTH +';
@@ -515,22 +406,22 @@ body {
   font-size: 1.2rem;
 }
 
-.subscribe-container {.subscribe-footer::before {
+.subscribe-footer::before {
   content: '';
   position: absolute;
-  top: -100px; /* Adjust to control vertical placement */
+  top: -100px;
   left: 50%;
-  transform: translateX(-50%); /* Center the element horizontally */
-  width: 180px; /* Adjust the size of the circle */
-  height: 180px; /* Same as width for a perfect circle */
-  background: url('icon.png') no-repeat center center; /* Ensure the image path is correct */
-  background-size: cover; /* Cover the entire element with the image */
-  border-radius: 50%; /* Make the element circular */
-  border: 8px solid #fff; /* White border around the image */
-  z-index: 1; /* Ensure the pseudo-element stays on top */
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background: url('icon.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  z-index: 1;
 }
 
-
+.subscribe-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -550,7 +441,7 @@ body {
 .subscribe-input {
   display: flex;
   gap: 10px;
-  margin-top:20 px;
+  margin-top: 20px;
 }
 
 .subscribe-input input {
@@ -579,7 +470,8 @@ body {
   margin: 8px 0;
 }
 
-.subscribe-hours, .subscribe-helpline {
+.subscribe-hours,
+.subscribe-helpline {
   margin: 15px 0;
 }
 
@@ -612,7 +504,48 @@ body {
   text-decoration: underline;
 }
 
-@media(max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 30px;
+  }
+  .hero-left h1 {
+    font-size: 36px;
+  }
+  .hero-left p {
+    font-size: 14px;
+  }
+  .hero-right .hero-image {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-left h1 {
+    font-size: 32px;
+  }
+  .hero-left p {
+    font-size: 14px;
+  }
+  .hero-right .hero-image {
+    max-width: 70%;
+  }
+  .reminder-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .reminder-image img {
+    margin-top: 20px;
+  }
   .subscribe-container {
     flex-direction: column;
     align-items: center;
@@ -625,25 +558,28 @@ body {
   .footer-links {
     margin-top: 10px;
   }
-}
-
-
-/* Responsive Sections */
-@media (max-width: 768px) {
-  .department-card, .doctor-card {
+  .department-card,
+  .doctor-card {
     width: 80%;
   }
 }
 
 @media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 28px;
+  }
+  .hero-left p {
+    font-size: 12px;
+  }
+  .hero-right .hero-image {
+    max-width: 90%;
+  }
   .departments h2,
   .doctors h2 {
     font-size: 28px;
   }
-
   .department-card p,
   .doctor-card p {
     font-size: 14px;
   }
 }
-
