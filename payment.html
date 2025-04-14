@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - HEALTH+</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .payment-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .payment-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .payment-form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+    .payment-form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .payment-form button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #00b894;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .payment-form button:hover {
+      background-color: #019875;
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-container">
+  <h2>Pay for Your Appointment</h2>
+  <form class="payment-form">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+
+    <label for="amount">Amount (₹)</label>
+    <input type="number" id="amount" placeholder="Enter amount" required>
+
+    <label for="card">Card Number</label>
+    <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+
+    <label for="expiry">Expiry Date</label>
+    <input type="text" id="expiry" placeholder="MM/YY" required>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" placeholder="123" required>
+
+    <button type="submit">Pay Now</button>
+  </form>
+</div>
+
+</body>
+</html>
